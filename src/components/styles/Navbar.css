@@ -66,20 +66,38 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
+  padding: 5px;
+  z-index: 1002;
 }
 
 .hamburger span {
-  width: 30px;
-  height: 2px;
-  background: var(--text-primary);
-  transition: all 0.3s;
+  width: 28px;
+  height: 3px;
+  background: var(--accent-primary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
   .navbar-links { display: none; }
   .hamburger { display: flex; }
+  .navbar-logo { font-size: 1.25rem; }
 }
 
 /* Mobile Sidebar */
