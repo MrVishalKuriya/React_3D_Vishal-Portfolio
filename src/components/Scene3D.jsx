@@ -6,10 +6,13 @@ import * as THREE from 'three';
 function AnimatedSphere() {
   const meshRef = useRef();
 
-  useFrame(({ clock }) => {
+  const timeRef = useRef(0);
+
+  useFrame((state, delta) => {
+    timeRef.current += delta;
     if (meshRef.current) {
-      meshRef.current.rotation.x = clock.getElapsedTime() * 0.15;
-      meshRef.current.rotation.y = clock.getElapsedTime() * 0.2;
+      meshRef.current.rotation.x = timeRef.current * 0.15;
+      meshRef.current.rotation.y = timeRef.current * 0.2;
     }
   });
 
@@ -45,10 +48,13 @@ function ParticleRing() {
     return pos;
   }, []);
 
-  useFrame(({ clock }) => {
+  const timeRef = useRef(0);
+
+  useFrame((state, delta) => {
+    timeRef.current += delta;
     if (pointsRef.current) {
-      pointsRef.current.rotation.y = clock.getElapsedTime() * 0.1;
-      pointsRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.3) * 0.1;
+      pointsRef.current.rotation.y = timeRef.current * 0.1;
+      pointsRef.current.rotation.x = Math.sin(timeRef.current * 0.3) * 0.1;
     }
   });
 
