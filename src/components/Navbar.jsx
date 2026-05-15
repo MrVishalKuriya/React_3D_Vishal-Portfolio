@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiX } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+import { setMobileMenu } from '../store/uiSlice';
 import './styles/Navbar.css';
 
 const navLinks = [
@@ -13,13 +15,18 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const dispatch = useDispatch();
+  const mobileOpen = useSelector((state) => state.ui.mobileMenuOpen);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const toggleMenu = (val) => {
+    dispatch(setMobileMenu(val));
+  };
 
   return (
     <>
@@ -43,7 +50,7 @@ export default function Navbar() {
 
           <div
             className={`hamburger ${mobileOpen ? 'active' : ''}`}
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => toggleMenu(!mobileOpen)}
           >
             <span /><span /><span />
           </div>
@@ -64,17 +71,17 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
             >
-              <button className="close-menu" onClick={() => setMobileOpen(false)}>
+              <button className="close-menu" onClick={() => toggleMenu(false)}>
                 <FiX />
               </button>
               
               <div className="mobile-nav-links">
                 {navLinks.map((link) => (
-                  <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)}>
+                  <a key={link.href} href={link.href} onClick={() => toggleMenu(false)}>
                     {link.label}
                   </a>
                 ))}
-                <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
+                <a href="#contact" onClick={() => toggleMenu(false)}>Contact</a>
               </div>
             </motion.div>
           </motion.div>
