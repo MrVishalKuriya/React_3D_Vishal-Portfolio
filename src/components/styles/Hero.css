@@ -204,8 +204,8 @@
   border-radius: 50%;
   opacity: 1;
   filter: contrast(105%);
-  mask-image: radial-gradient(circle, black 75%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle, black 75%, transparent 100%);
+  mask-image: radial-gradient(circle, black 75%, transparent 100%);
   border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
