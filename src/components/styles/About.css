@@ -138,11 +138,22 @@
   color: var(--text-primary);
 }
 
+.heatmap-container {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+
+.heatmap-container::-webkit-scrollbar {
+  display: none;
+}
+
 .heatmap-grid {
   display: grid;
-  grid-template-columns: repeat(25, 1fr);
+  grid-template-columns: repeat(25, 12px);
   gap: 4px;
   margin-bottom: 1.5rem;
+  min-width: max-content;
 }
 
 .heatmap-cell {
@@ -175,8 +186,20 @@
 /* Bento Grid */
 .about-bento-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .about-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .about-bento-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .profile-card {
@@ -297,8 +320,11 @@
 
 @media (max-width: 1024px) {
   .about-grid-enhanced { grid-template-columns: 1fr; gap: 4rem; }
-  .github-top-bar { display: none; }
-  .about-bento-grid { grid-template-columns: 1fr 1fr; }
+  .github-top-bar { 
+    flex-wrap: wrap; 
+    gap: 2rem;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 640px) {

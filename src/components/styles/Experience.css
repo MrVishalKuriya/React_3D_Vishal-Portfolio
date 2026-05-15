@@ -169,6 +169,10 @@
 }
 
 @media (max-width: 768px) {
+  .timeline-year-bg {
+    font-size: 5rem;
+  }
+  
   .timeline-enhanced {
     padding-left: 2rem;
   }
@@ -178,12 +182,12 @@
     gap: 1rem;
   }
   
-  .header-meta {
-    align-items: flex-start;
+  .timeline-item-enhanced::after {
+    left: -2rem;
   }
   
-  .timeline-year-bg {
-    font-size: 5rem;
+  .header-meta {
+    align-items: flex-start;
   }
   
   .timeline-content-card {
