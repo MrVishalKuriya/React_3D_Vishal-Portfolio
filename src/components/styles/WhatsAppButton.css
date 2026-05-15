@@ -113,7 +113,7 @@
 
 @media (max-width: 480px) {
   .whatsapp-floating-container {
-    bottom: 1.5rem;
+    bottom: 6rem; /* Move up to avoid overlapping footer social icons */
     right: 1.5rem;
   }
   .whatsapp-popup {
