@@ -42,7 +42,7 @@ export default function Contact() {
             
             <div className="contact-methods">
               <motion.a 
-                href="mailto:vishalkuriya@gmail.com" 
+                href="mailto:vishalpravinbhai6@gmail.com" 
                 className="contact-method-item"
                 custom={2}
                 variants={fadeUp}
@@ -52,7 +52,7 @@ export default function Contact() {
                 <div className="contact-method-icon"><FiMail /></div>
                 <div className="contact-method-text">
                   <span>Email Me</span>
-                  <strong>vishalkuriya@gmail.com</strong>
+                  <strong>vishalpravinbhai6@gmail.com</strong>
                 </div>
               </motion.a>
 
@@ -79,7 +79,7 @@ export default function Contact() {
               animate={inView ? "visible" : ""}
             >
               <a href="https://github.com/MrVishalKuriya" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
-              <a href="https://www.linkedin.com/in/kuriya-vishal-prajapati-284154233" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
+              <a href="https://www.linkedin.com/in/kuriya-vishal-prajapati-284154233/" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
               <a href="https://www.instagram.com/twocoder" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
             </motion.div>
           </div>

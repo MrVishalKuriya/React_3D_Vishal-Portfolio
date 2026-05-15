@@ -20,16 +20,16 @@ export default function Footer() {
           <div className="footer-link-group">
             <span>Contact</span>
             <a href="mailto:vishalpravinbhai6@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/kuriya-vishal-prajapati-284154233">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/kuriya-vishal-prajapati-284154233/">LinkedIn</a>
           </div>
         </div>
         
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Vishal Kuriya. All rights reserved.</p>
           <div className="footer-socials">
-            <a href="https://github.com/MrVishalKuriya"><FiGithub /></a>
-            <a href="https://www.linkedin.com/in/kuriya-vishal-prajapati-284154233"><FiLinkedin /></a>
-            <a href="https://www.instagram.com/twocoder"><FiInstagram /></a>
+            <a href="https://github.com/MrVishalKuriya" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
+            <a href="https://www.linkedin.com/in/kuriya-vishal-prajapati-284154233/" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
+            <a href="https://www.instagram.com/twocoder" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
           </div>
         </div>
       </div>
