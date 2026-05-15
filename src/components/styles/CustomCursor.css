@@ -1,0 +1,19 @@
+.minimal-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10002;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+@media (pointer: fine) {
+  html, body, a, button {
+    cursor: none !important;
+  }
+}

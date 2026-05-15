@@ -1,0 +1,113 @@
+.stack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  justify-content: center;
+}
+
+.stack-tab {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.stack-tab:hover,
+.stack-tab.active {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 8rem;
+}
+
+.stack-item {
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-base);
+}
+
+.stack-item:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-5px);
+  background: var(--bg-card-hover);
+}
+
+.stack-item-icon {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+}
+
+.stack-item-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Toolbox Section */
+.toolbox-section {
+  padding-top: 5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.toolbox-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.toolbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.toolbox-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.7;
+  transition: all var(--transition-base);
+}
+
+.toolbox-item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.toolbox-icon {
+  font-size: 2rem;
+  color: var(--text-secondary);
+}
+
+.toolbox-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .stack-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
